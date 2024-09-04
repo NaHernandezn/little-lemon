@@ -1,32 +1,591 @@
 .App {
+  background-color: white;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+}
+
+h1, h2 {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+h3{
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+form{
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+p{
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button{
+  background-color: #F4CE14;
+  color: #333333;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 0.5vw;
+  padding: 0.6vw;
+  font-size: 1vw;
+}
+
+a{
+  text-decoration: none;
+}
+
+.nav-bar{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+}
+
+.nav-bar a{
+  grid-column: 3/4;
+  padding-top: 1vw;
+  color: #333333;
+}
+
+.nav-bar img{
+  height: 2.2vw;
+  width: auto;
+}
+
+#basket{
+  grid-column: 10/11;
+  justify-self: end;
+}
+
+.horizontal_list{
+  grid-column: 4/10;
+  padding: 0;
+}
+
+li{
+  list-style-type: none;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.horizontal_list li:first-child{
+  margin-left: 4.9vw;
+}
+
+.horizontal_list li:last-child{
+  margin-right: 0;
+}
+
+.horizontal_list li{
+  display: inline;
+  margin-right: 5.8vw;
+  font-size: 1vw;
+  font-weight: 800;
+}
+
+.head{
+  background-color: #495E57;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  position: relative;
+}
+
+.head-text{
+  margin: 0;
+  grid-column: 3/7;
+}
+
+.head-img{
+  position: absolute; /*This is for making the img lay on top*/
+  grid-area: 1/9/4/11;
+  height: 25vw;
+  width: auto;
+  border-radius: 1vw;
+  top: 1vw;
+  right: 0;
+}
+
+.head button{
+  grid-column: 3/5;
+  grid-row: 4/5;
+}
+
+.main{
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+}
+
+.specials-row{
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(9, 1fr);
+
+}
+
+.section-title{
+  font-size: 4.444vw;
+  margin: 0;
+  align-self: center;
+}
+
+.specials-row h1{
+  grid-column: 3/8;
+  grid-row: 2/3;
+  align-self: center;
+}
+
+.specials-row button{
+  align-self: center;
+  grid-column: 9/11;
+  grid-row: 2/3;
+}
+
+.kard{
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  padding: 1vw;
+  background-color: #EDEFEE;
+  border-radius: 1.5vw;
+}
+
+.food-img{
+  grid-area: img;
+  width: 14vw;
+  height: 10vw;
+  align-self: center;
+  justify-self: center;
+  border-radius: 1vw;
+}
+
+.food-name{
+  font-size:1.389vw;
+  grid-area: name;
+}
+
+.food-price{
+  grid-Area: price;
+  justify-self: end;
+  font-size:1.389vw;
+}
+
+.food-descrip{
+  grid-area: text;
+  font-size: 0.79vw;
+}
+
+.delivery{
+  grid-area: order;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-top: 1vw;
+  color: #333333;
+}
+
+.bike{
+  grid-area: icon;
+  height: 2vw;
+  justify-self: end;
+  margin: 2vw;
+  margin-top: 0.6vw;
+}
+
+.food-count{
+  grid-area: order;
+  font-size: 1.1vw;
+  font-weight: 600;
+  margin-top: 1vw;
+  color: #333333;
+  display: inline;
+}
+
+#kard1{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 3/5;
+  grid-row: 4/9;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+}
+
+#kard2{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 6/8;
+  grid-row: 4/9;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+
+}
+
+#kard3{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 9/11;
+  grid-row: 4/9;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+}
+
+#kard4{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 3/5;
+  grid-row: 10/15;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+}
+
+#kard5{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 6/8;
+  grid-row: 10/15;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+
+}
+
+#kard6{
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 9/11;
+  grid-row: 10/15;
+  grid-template-areas:
+  'img img'
+  'img img'
+  'name price'
+  'text text'
+  'order icon';
+}
+
+.test-row{
+  grid-row: 2/3;
+  background-color: #FBDABB;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(8, 5vw);
+}
+
+.test-row h1{
+  grid-column: 5/9;
+  grid-row: 1/2;
+  justify-self: center;
+}
+
+.person-pic{
+  grid-area: img;
+  height: 8vw;
+  width: 10vw;
+  align-self: center;
+  justify-self: center;
+  border-radius: 1vw;
+}
+
+.star{
+  grid-area: icon;
+  justify-self: center;
+  align-self: center;
+  width: 8vw;
+}
+
+.quote{
+  grid-area: text;
+  font-style: italic;
+  text-align: center;
+  font-size: 1vw;
+  margin: 0;
+  align-self: center;
+}
+
+.person-name{
+  grid-area: name;
+  justify-self: end;
+  font-weight: bold;
+  align-self: center;
+  font-size: 1.2vw;
+  margin: 0;
+}
+
+#test1{
+  grid-column: 3/5;
+  grid-row: 3/8;
+  grid-template-areas:
+  'img'
+  'img'
+  'icon'
+  'text'
+  'name';
+}
+
+
+#test2{
+  grid-column: 6/8;
+  grid-row: 3/8;
+  grid-template-areas:
+  'img'
+  'img'
+  'icon'
+  'text'
+  'name';
+}
+
+#test3{
+  grid-column: 9/11;
+  grid-row: 3/8;
+  grid-template-areas:
+  'img'
+  'img'
+  'icon'
+  'text'
+  'name';
+}
+
+.about-row{
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.about-row h1{
+  grid-column: 3/7;
+  margin: 0;
+  align-self: center;
+}
+
+.about-row h2{
+  grid-column: 3/7;
+  margin: 0;
+  align-self: center;
+  font-size: 2.5vw;
+}
+
+.about-row p{
+  grid-column: 3/7;
+  font-size: 1vw;
+  margin: 0;
+  align-self: center;
+  grid-row: 5/6;
+}
+
+#litLemTit{
+  color: #495E57;
+  font-size: 4.444vw;
+  grid-row: 3/4;
+}
+
+#chic {
+  grid-row: 4/5;
+}
+
+.about-row img {
+  width: 16vw;
+  height: auto;
+  justify-self: center;
+  border-radius: 1vw;
+}
+
+#A{
+  grid-area: 4 / 8 / 6 / 10;
+  z-index: 1;
+}
+
+#B{
+  grid-area: 3 / 9 / 6 / 11;
+}
+
+.foot{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, auto);
+  background-color: #495E57;
+  align-items: center;
+  color: #EDEFEE;
+  font-size: 0.5vw;
+  font-weight: 600;
+}
+
+.foot h2{
+  grid-row: 2/3;
+  margin: 1vw;
+}
+
+.foot ul{
+  grid-row: 3/4;
+  margin: 1vw;
+  padding: 0;
+}
+
+.naviga{
+  margin: 0;
+  grid-column: 3/5;
+}
+
+.contc{
+  margin: 0;
+  grid-column: 6/8;
+}
+
+.smlinks{
+  margin: 0;
+  grid-column: 9/11;
+}
+
+.reservation-page{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1 fr 1fr;
+  background-color: #EDEFEE;
+}
+
+.reservation-page h1{
+  font-size: 3vw;
+  grid-column: 6/8;
+  justify-self: center;
+}
+
+.reservation-page form{
+  grid-column: 5/11;
+  grid-row: 2/3;
+  margin: 3vw;
+  display: grid;
+  max-width: 27vw;
+  gap: 1vw;
+  align-self: center;
+}
+
+.confirmation-screen{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+.confirmation-screen h3{
+  grid-column: 5/9;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.confirmation-screen button{
+  grid-column: 6/8;
+  align-self: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.error{
+  margin: 0.3vw;
+  font-size: 0.7vw;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.online-menu{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(15, 6vw);
+  background-color: #FBDABB;
 }
 
-.App-link {
-  color: #61dafb;
+.online-menu h1{
+  grid-column: 3/6;
+  grid-row: 1/2;
+  font-size: 4.444vw;
+  margin: 0;
+  grid-row: 2/3;
 }
+
+.online-menu button{
+  align-self: center;
+  margin: 0;
+  width: fit-content;
+  padding-top: 0.1vw;
+  padding-bottom: 0.1vw;
+}
+
+#plus{
+  justify-self: end;
+}
+
+#food-number{
+  justify-self: center;
+  height: fit-content;
+  margin-top: 2vw;
+}
+
+#order-button{
+  grid-column: 9/11;
+  grid-row: 2/3;
+  background-color: #F4CE14;
+  color: #333333;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 0.5vw;
+  padding: 0.6vw;
+  font-size: 1vw;
+  justify-self: end;
+  align-self: center;
+  width: stretch;
+}
+
+.purchase-row{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1f;
+  background-color: #FBDABB;
+}
+
+.purchase-row h2{
+  font-size: 2.5vw;
+}
+
+.your-order{
+  grid-column: 8/11;
+}
+
+.customer-info{
+  grid-column: 3/7;
+  grid-row: 1/2;
+}
+
+.customer-info input {
+  margin: 1.82vw;
+  width: stretch;
+}
+
+.customer-info button{
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
+
 
 @keyframes App-logo-spin {
   from {
